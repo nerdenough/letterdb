@@ -7,6 +7,40 @@ body {
   font-family: $base-font-family;
   font-size: $base-font-size;
   font-weight: $base-font-weight;
+  margin-top: 50px;
+}
+
+#letterdb-nav {
+  background: $theme-color;
+  border: none;
+
+  #logo {
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+
+  .navbar-nav {
+    a {
+      color: white;
+      font-size: 16px;
+      &:hover {
+        background: darken($theme-color, 5%);
+      }
+    }
+  }
+
+  .navbar-toggle {
+    border: none;
+    &:hover, &:active {
+      background: transparent;
+    }
+  }
+
+  #letterdb-navbar {
+    border-top: none;
+  }
 }
 
 #home-jumbo {
@@ -41,14 +75,17 @@ body {
 .footer {
   background: $theme-color;
   color: white;
-  font-weight: $semibold;
-  padding: 30px 0;
+  padding: 20px 0;
   margin-top: 30px;
 }
 
 @media screen and (max-width: 768px) {
   #home-jumbo {
     height: 250px;
+  }
+
+  #logo {
+    padding-left: 10px;
   }
 
   #home-logo {
@@ -71,5 +108,9 @@ body {
 
   .footer {
     font-size: 14px;
+  }
+
+  .desktop-only {
+    display: none;
   }
 }
