@@ -1,0 +1,34 @@
+{
+  "version": "0.0.1",
+  "name": "swen303-mini-project",
+  "description": "SWEN303 Mini Project",
+  "author": {
+    "name": "Brendan Goodenough",
+    "email": "brendan@goodenough.nz",
+    "url": "https://www.goodenough.nz"
+  },
+  "license": "MIT",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nerdenough/swen303-mini-project.git"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "jade": "^1.11.0",
+    "morgan": "^1.7.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.2.0",
+    "gulp-sourcemaps": "^1.6.0"
+  },
+  "private": true
+}
