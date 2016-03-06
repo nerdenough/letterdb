@@ -1,10 +1,10 @@
-extends shared/layout
+extends ../shared/layout
 
 block content
   #home-jumbo.jumbotron
     #home-jumbo-search
       .container
-        form(action='/search', method='get')
+        form(action='/explore', method='get')
           input#search(type='text', name='q', placeholder='Search')
           button#submit(type='submit')
             span.glyphicon.glyphicon-search

@@ -7,6 +7,7 @@ logger = require 'morgan'
 
 config = require '../config'
 index = require './routes/index'
+explore = require './routes/explore'
 
 app = express()
 server = http.createServer(app)
@@ -28,6 +29,7 @@ app.use (req, res, next) ->
 
 # Define routes
 app.use '/', index
+app.use '/explore', explore
 
 # Catch 404 errors
 # Forwarded to the error handlers

@@ -1,10 +1,11 @@
 express = require 'express'
 router = express.Router()
 
-# Homepage
+# Explore
 router.get '/', (req, res) ->
-  res.render 'index/index', (
+  res.render 'explore/explore', (
     title: req.config.title
+    query: req.query.q
   )
 
 module.exports = router
