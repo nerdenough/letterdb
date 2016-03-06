@@ -16,17 +16,17 @@ gulp.task 'sass', ->
 # Watches the Sass folder for changes, running the main sass task when a change
 # is detected.
 gulp.task 'sass:watch', ->
-  gulp.watch './sass/**/*.scss', ['sass']
+  gulp.watch ['./sass/**/*.scss'], ['sass']
 
 # Compiles the CoffeeScript located in the src folder to JavaScript, placing the
 # compiled files into the app folder.
 gulp.task 'coffee', ->
   gulp
-    .src './src/**/*.coffee'
+    .src './src/app/**/*.coffee'
     .pipe coffee bare: true
     .pipe gulp.dest './app/'
 
 # Watches the CoffeeScript folder for changes, running the main coffee task
 # when a change is detected.
 gulp.task 'coffee:watch', ->
-  gulp.watch './src/**/*.coffee', ['coffee']
+  gulp.watch ['./src/app/**/*.coffee'], ['coffee']

@@ -1,7 +1,7 @@
 {
   "version": "0.0.1",
-  "name": "swen303-mini-project",
-  "description": "SWEN303 Mini Project",
+  "name": "letterdb",
+  "description": "SWEN303 Individual Project",
   "author": {
     "name": "Brendan Goodenough",
     "email": "brendan@goodenough.nz",
@@ -11,7 +11,7 @@
   "main": "./app/server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nerdenough/swen303-mini-project.git"
+    "url": "git+https://github.com/nerdenough/letterdb.git"
   },
   "scripts": {
     "start": "nodemon ./app/server.js"
