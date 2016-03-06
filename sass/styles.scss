@@ -16,8 +16,17 @@ body {
   background-position: center;
 }
 
+#home-logo {
+  margin-top: 100px;
+
+  img {
+    max-width: 360px;
+  }
+}
+
 #home-thumbs {
-  margin: 100px 0;
+  margin-top: 100px;
+  margin-bottom: 100px;
 
   img {
     max-width: 50%;
@@ -42,11 +51,21 @@ body {
     height: 250px;
   }
 
-  #home-thumbs {
+  #home-logo {
     margin-top: 20px;
+    img {
+      max-width: 50%;
+    }
+  }
+
+  #home-thumbs {
+    margin-top: 40px;
     margin-bottom: 0;
     .col-md-4 {
       margin-bottom: 40px;
+    }
+    img {
+      max-width: 30%;
     }
   }
 
