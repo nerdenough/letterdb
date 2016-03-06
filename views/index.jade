@@ -2,6 +2,12 @@ extends shared/layout
 
 block content
   #home-jumbo.jumbotron
+    #home-jumbo-search
+      .container
+        form(action='/search', method='get')
+          input#search(type='text', name='q', placeholder='Search')
+          button#submit(type='submit')
+            span.glyphicon.glyphicon-search
   
   .container
     #home-logo.row.center

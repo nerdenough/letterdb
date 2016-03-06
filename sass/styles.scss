@@ -8,6 +8,7 @@ body {
   font-size: $base-font-size;
   font-weight: $base-font-weight;
   margin-top: 50px;
+  overflow-x: hidden;
 }
 
 #letterdb-nav {
@@ -44,10 +45,47 @@ body {
 }
 
 #home-jumbo {
+  position: relative;
   height: 800px;
   background: url(/images/home-jumbo.jpg) no-repeat;
   background-size: cover;
   background-position: center;
+
+  #home-jumbo-search {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+    form {
+      display: flex;
+      width: 80%;
+      margin: 0 auto;
+      @include box-shadow(0, 0, 5px, 0, $theme-color);
+    }
+
+    #search {
+      flex-grow: 1;
+      height: 50px;
+      background: white;
+      color: $theme-color;
+      padding: 10px;
+      outline: none;
+      border: none;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+
+    #submit {
+      width: 50px;
+      height: 50px;
+      background: white;
+      color: $theme-color;
+      outline: none;
+      border: none;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+  }
 }
 
 #home-logo {
@@ -79,7 +117,7 @@ body {
   margin-top: 30px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   #home-jumbo {
     height: 250px;
   }
@@ -102,7 +140,7 @@ body {
       margin-bottom: 40px;
     }
     img {
-      max-width: 30%;
+      max-width: 100px;
     }
   }
 
