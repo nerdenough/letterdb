@@ -1,0 +1,15 @@
+a {
+  color: $link-color;
+  &:hover {
+    color: $link-color;
+    text-decoration: underline;
+  }
+}
+
+.dark a {
+  color: $link-on-dark-color;
+  &:hover {
+    color: $link-on-dark-color;
+    text-decoration: underline;
+  }
+}

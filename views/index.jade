@@ -1,5 +1,19 @@
 extends shared/layout
 
 block content
-  h1= title
-  p Hello, World!
+  #home-jumbo.jumbotron
+  
+  .container
+    .row#home-thumbs
+      .col-md-4.center
+        img(src='/images/search.png', alt='Search')
+        h3 Search
+        p Search for letters and explore the LetterDB collection!
+      .col-md-4.center
+        img(src='/images/read.png', alt='Read')
+        h3 Read
+        p Read letters and view detailed statistics and interesting facts about them!
+      .col-md-4.center
+        img(src='/images/contribute.png', alt='Contribute')
+        h3 Contribute
+        p Create or update letters and become a part of the LetterDB community!

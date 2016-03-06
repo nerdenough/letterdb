@@ -1,0 +1,18 @@
+@import 'modules/all';
+
+// Weights
+$light: 300;
+$regular: 400;
+$semibold: 600;
+$bold: 700;
+
+// Fonts
+$base-font-family: 'Open Sans', Arial, sans-serif;
+$base-font-size: 18px;
+$base-font-weight: $regular;
+$base-font-color: darken($grey, 30%);
+
+// Color scheme
+$theme-color: $brown;
+$link-color: $theme-color;
+$link-on-dark-color: lighten($theme-color, 60%);

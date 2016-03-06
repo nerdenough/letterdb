@@ -1,7 +1,7 @@
 'use strict';
 var config = {};
 
-config.title = 'SWEN303 Mini Project';
+config.title = 'LetterDB';
 config.port = 3000;
 
 module.exports = config;

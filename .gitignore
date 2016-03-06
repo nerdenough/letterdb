@@ -34,3 +34,6 @@ node_modules
 
 # Compiled JavaScript
 app
+
+# Compiled Sass
+public/css

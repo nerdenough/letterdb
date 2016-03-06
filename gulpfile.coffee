@@ -1,7 +1,24 @@
 gulp = require 'gulp'
+sass = require 'gulp-sass'
 coffee = require 'gulp-coffee'
+sourcemaps = require 'gulp-sourcemaps'
 
-# Compiles the CoffeeScript located in the src to JavaScript, placing the
+# Converts the Sass located in the sass folder to CSS, placing the converted
+# files into the public CSS folder.
+gulp.task 'sass', ->
+  gulp
+    .src './sass/**/*.scss'
+    .pipe sourcemaps.init()
+    .pipe sass().on 'error', sass.logError
+    .pipe sourcemaps.write()
+    .pipe gulp.dest './public/css/'
+
+# Watches the Sass folder for changes, running the main sass task when a change
+# is detected.
+gulp.task 'sass:watch', ->
+  gulp.watch './sass/**/*.scss', ['sass']
+
+# Compiles the CoffeeScript located in the src folder to JavaScript, placing the
 # compiled files into the app folder.
 gulp.task 'coffee', ->
   gulp

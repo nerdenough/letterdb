@@ -1,0 +1,56 @@
+@import 'partials/base';
+@import 'partials/divs';
+@import 'partials/links';
+
+body {
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-weight: $base-font-weight;
+}
+
+#home-jumbo {
+  height: 800px;
+  background: url(/images/home-jumbo.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#home-thumbs {
+  margin: 100px 0;
+
+  img {
+    max-width: 50%;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    margin: 20px 0;
+  }
+}
+
+.footer {
+  background: $theme-color;
+  color: white;
+  font-weight: $semibold;
+  padding: 30px 0;
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  #home-jumbo {
+    height: 250px;
+  }
+
+  #home-thumbs {
+    margin-top: 20px;
+    margin-bottom: 0;
+    .col-md-4 {
+      margin-bottom: 40px;
+    }
+  }
+
+  .footer {
+    font-size: 14px;
+  }
+}
