@@ -6,6 +6,7 @@ cookieParser = require 'cookie-parser'
 logger = require 'morgan'
 
 config = require '../config'
+index = require './routes/index'
 
 app = express()
 server = http.createServer(app)
@@ -20,7 +21,13 @@ app.use bodyParser.urlencoded extended: false
 app.use cookieParser()
 app.use express.static path.join(__dirname, '../public')
 
-# TODO: Define routes
+# Global route
+app.use (req, res, next) ->
+  req.config = config
+  next()
+
+# Define routes
+app.use '/', index
 
 # Catch 404 errors
 # Forwarded to the error handlers
