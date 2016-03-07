@@ -18,6 +18,3 @@ JavaScript, placing the compiled files into the app folder.
 ## Disclaimer
 All images used in this project are licensed under the [Creative Commons
 0](https://creativecommons.org/publicdomain/zero/1.0/) license.
-
-All data for this project (XML, letters and other documents) is provided by
-Victoria University of Wellington and is not my own.
