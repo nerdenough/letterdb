@@ -11,7 +11,7 @@
   "main": "./app/server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nerdenough/letterdb.git"
+    "url": "git+https://github.com/nerdenough/swen303-letterdb.git"
   },
   "scripts": {
     "start": "nodemon ./app/server.js"
