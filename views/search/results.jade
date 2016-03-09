@@ -1,0 +1,44 @@
+extends ../shared/layout
+
+block content
+  .container
+    form#searchbar(action='/search', method='get')
+      if query
+        input#searchbar-query(type='text', name='q', placeholder='Search', value='#{query}')
+      else
+        input#searchbar-query(type='text', name='q', placeholder='Search')
+      button#searchbar-submit(type='submit')
+        span.glyphicon.glyphicon-search
+    
+    if query
+      h1 Search Results
+      p Matching the term "#{query}"
+      
+      #search-results
+        .col-md-6
+          a(href='/letter')
+            .search-result
+              .type
+                .icon
+                  span.glyphicon.glyphicon-envelope
+              .info
+                h2 Letter Title
+                h3 Firstname Lastname
+                h4 2016, March 9
+              .type
+                .icon
+                  span.glyphicon.glyphicon-menu-right
+              
+        .col-md-6
+          a(href='/letter')
+            .search-result
+              .type
+                .icon
+                  span.glyphicon.glyphicon-envelope
+              .info
+                h2 Letter Title
+                h3 Firstname Lastname
+                h4 2016, March 9
+              .type
+                .icon
+                  span.glyphicon.glyphicon-menu-right

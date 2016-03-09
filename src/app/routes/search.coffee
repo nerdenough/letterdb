@@ -1,9 +1,9 @@
 express = require 'express'
 router = express.Router()
 
-# Explore
-router.get '/', (req, res) ->
-  res.render 'explore/explore', (
+# Search
+router.get '/search', (req, res) ->
+  res.render 'search/results', (
     title: req.config.title
     query: req.query.q
   )
