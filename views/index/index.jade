@@ -4,6 +4,9 @@ block content
   #home-jumbo.jumbotron
     #home-jumbo-search
       .container
+        #home-jumbo-logo
+          img(src='/images/letterdb-logo-white-shadow.png')
+        p#home-jumbo-tagline A database of letters
         form(action='/search', method='get')
           input#search(type='text', name='q', placeholder='Search')
           button#submit(type='submit')

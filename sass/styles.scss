@@ -51,6 +51,24 @@ body {
   background-size: cover;
   background-position: center;
 
+  #home-jumbo-logo {
+    text-align: center;
+
+    img {
+      max-height: 100px;
+    }
+  }
+
+  #home-jumbo-tagline {
+    color: white;
+    font-size: 24px;
+    font-weight: $semibold;
+    text-align: center;
+    text-shadow: 1px 1px 5px black;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
   #home-jumbo-search {
     position: relative;
     top: 50%;
@@ -219,7 +237,16 @@ body {
 
 @media screen and (max-width: 1024px) {
   #home-jumbo {
-    height: 250px;
+    height: 400px;
+
+    #home-jumbo-logo {
+      text-align: center;
+      margin-bottom: 10px;
+
+      img {
+        max-height: 50px;
+      }
+    }
   }
 
   #logo {
