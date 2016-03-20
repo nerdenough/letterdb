@@ -8,13 +8,13 @@
     "url": "https://www.goodenough.nz"
   },
   "license": "MIT",
-  "main": "./app/server.js",
+  "main": "main.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nerdenough/swen303-letterdb.git"
   },
   "scripts": {
-    "start": "nodemon ./app/server.js"
+    "start": "nodemon main.js"
   },
   "dependencies": {
     "body-parser": "^1.15.0",
