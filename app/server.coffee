@@ -7,7 +7,7 @@ logger = require 'morgan'
 
 config = require '../config'
 index = require './routes/index'
-search = require './routes/search'
+explore = require './routes/explore'
 
 app = express()
 server = http.createServer(app)
@@ -29,7 +29,7 @@ app.use (req, res, next) ->
 
 # Define routes
 app.use '/', index
-app.use '/', search
+app.use '/explore', explore
 
 # Catch 404 errors
 # Forwarded to the error handlers
@@ -44,19 +44,17 @@ if app.get('env') is 'development'
   app.use (err, req, res, next) ->
     console.log err
     res.status err.status || 500
-    res.render 'error', (
+    res.render 'error',
       message: err.message
       error: err
-    )
 
 # Production error handler
 # Does not display stacktrace to the user
 app.use (err, req, res, next) ->
   res.status err.status || 500
-  res.render 'error', (
+  res.render 'error',
     message: err.message
     error: ''
-  )
 
 server.listen config.port
 module.exports = app
