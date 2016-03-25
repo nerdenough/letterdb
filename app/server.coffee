@@ -4,13 +4,18 @@ express = require 'express'
 bodyParser = require 'body-parser'
 cookieParser = require 'cookie-parser'
 logger = require 'morgan'
+basex = require 'node-basex'
 
 config = require '../config'
 index = require './routes/index'
 explore = require './routes/explore'
 
+# Server setup
 app = express()
 server = http.createServer(app)
+
+# BaseX client
+client = new basex.Client(config.basex)
 
 # View engine setup
 app.set 'views', path.join(__dirname, '../views')
@@ -25,6 +30,7 @@ app.use express.static path.join(__dirname, '../public')
 # Global route
 app.use (req, res, next) ->
   req.config = config
+  req.baseXClient = client
   next()
 
 # Define routes

@@ -4,35 +4,38 @@ block content
   .container
     include ../shared/searchbar.jade
     
-    if query
-      h1 Search Results
+    h1 Search Results
+    if results
       p Matching the term "#{query}"
-      
+    else
+      p No data was found matching the query "#{query}".
+    
+    if results
       #search-results
         .col-md-6
-          a(href='/letter')
-            .search-result
-              .type
-                .icon
-                  span.glyphicon.glyphicon-envelope
-              .info
-                h2 Letter Title
-                h3 Firstname Lastname
-                h4 2016, March 9
-              .type
-                .icon
-                  span.glyphicon.glyphicon-menu-right
-              
-        .col-md-6
-          a(href='/letter')
-            .search-result
-              .type
-                .icon
-                  span.glyphicon.glyphicon-envelope
-              .info
-                h2 Letter Title
-                h3 Firstname Lastname
-                h4 2016, March 9
-              .type
-                .icon
-                  span.glyphicon.glyphicon-menu-right
+            a(href='/letter')
+              .search-result
+                .type
+                  .icon
+                    span.glyphicon.glyphicon-envelope
+                .info
+                  h2 Letter Title
+                  h3 Firstname Lastname
+                  h4 2016, March 9
+                .type
+                  .icon
+                    span.glyphicon.glyphicon-menu-right
+                
+          .col-md-6
+            a(href='/letter')
+              .search-result
+                .type
+                  .icon
+                    span.glyphicon.glyphicon-envelope
+                .info
+                  h2 Letter Title
+                  h3 Firstname Lastname
+                  h4 2016, March 9
+                .type
+                  .icon
+                    span.glyphicon.glyphicon-menu-right
