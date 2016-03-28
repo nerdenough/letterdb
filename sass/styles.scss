@@ -132,7 +132,6 @@ body {
   margin-top: 20px;
   display: flex;
   border-radius: 3px;
-  border: 1px solid $theme-color;
 
   #searchbar-query {
     flex-grow: 1;
@@ -142,8 +141,8 @@ body {
     padding: 10px;
     outline: none;
     border: none;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
   }
 
   #searchbar-submit {
@@ -153,14 +152,16 @@ body {
     color: $theme-color;
     outline: none;
     border: none;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
   }
 }
 
 #search-results {
+  margin-top: 10px;
+
   .col-md-6 {
-    padding: 5px;
+    padding: 10px;
   }
 
   a:hover {
@@ -169,10 +170,12 @@ body {
 
   .search-result {
     display: flex;
-    background: $theme-color;
-    color: white;
-    padding: 20px 0;
-    border-radius: 3px;
+    color: $theme-color;
+    background: white;
+    padding: 40px 0;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.2s ease-in-out;
 
     .type {
       padding: 0 20px;
@@ -181,11 +184,14 @@ body {
         position: relative;
         width: 50px;
         height: 50px;
-        background: white;
-        color: $theme-color;
         font-size: 24px;
         font-weight: $bold;
         border-radius: 50px;
+
+        &.initials {
+          background: $theme-color;
+          color: white;
+        }
 
         span {
           position: absolute;
@@ -199,28 +205,29 @@ body {
       flex-grow: 1;
 
       h2 {
-        font-size: 18px;
+        font-size: 24px;
         margin: 0;
         font-weight: $semibold;
-        text-transform: uppercase;
+        text-transform: capitalize;
       }
 
       h3 {
-        font-size: 14px;
+        font-size: 18px;
         font-weight: $semibold;
         margin: 0;
       }
 
       h4 {
-        font-size: 14px;
+        font-size: 16px;
         font-style: italic;
         font-weight: $regular;
         margin: 0;
+        margin-top: 5px;
       }
     }
 
     &:hover {
-      background: lighten($theme-color, 10%);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
       .icon {
         color: lighten($theme-color, 10%);
@@ -238,19 +245,23 @@ body {
 
     li, p {
       display: inline-block;
-      font-size: 14px;
+      font-size: 18px;
+      font-weight: bold;
       color: $theme-color;
-      margin: 10px 5px;
+      margin: 40px 5px;
     }
 
     li {
-      width: 32px;
-      height: 32px;
-      border: 1px solid $theme-color;
-      border-radius: 3px;
-      line-height: 32px;
+      width: 42px;
+      height: 42px;
+      border-radius: 2px;
+      line-height: 42px;
 
-      &:hover, &.current-page {
+      &:hover {
+        color: darken($theme-color, 10%);
+      }
+
+      &.current-page {
         color: white;
         background: $theme-color;
       }
@@ -263,7 +274,6 @@ body {
   background: $theme-color;
   color: white;
   padding: 20px 0;
-  margin-top: 30px;
 }
 
 @media screen and (max-width: 1024px) {
