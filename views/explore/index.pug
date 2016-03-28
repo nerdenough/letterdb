@@ -7,7 +7,7 @@ block content
     #search-results
       each result in results
         .col-md-6
-          a(href='/letter/#{result.author}/#{result.category}/#{result.title}')
+          a(href='/letter/' + result.author + '/' + result.category + '/' + result.title)
             .search-result
               .type
                 .icon
