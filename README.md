@@ -7,13 +7,11 @@ implementation "LetterDB" as the site is primarily about storing, accessing
 and contributing to letters.
 
 ## Commands
-`npm start`: Starts the server on the port specified in config.js.
+`npm start`: Starts the server with config specified in `config.coffee`.
+Requires nodemon to be installed.
 
 `gulp sass`: Translates the Sass stylesheets into CSS stylesheets and places
 them into the public CSS directory.
-
-`gulp coffee`: Compiles all CoffeeScript in the src directory into
-JavaScript, placing the compiled files into the app folder.
 
 ## Disclaimer
 All images used in this project are licensed under the [Creative Commons
