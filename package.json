@@ -17,14 +17,13 @@
     "start": "nodemon main.js"
   },
   "dependencies": {
-    "basex": "^0.7.0",
     "body-parser": "^1.15.0",
+    "cheerio": "^0.20.0",
     "cookie-parser": "^1.4.1",
     "express": "^4.13.4",
-    "express-session": "^1.13.0",
     "jade": "^1.11.0",
     "morgan": "^1.7.0",
-    "node-basex": "0.0.1",
+    "node-basex": "0.0.3",
     "node-xmler": "^0.1.1"
   },
   "devDependencies": {
