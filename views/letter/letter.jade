@@ -1,0 +1,13 @@
+extends ../shared/layout
+
+block content
+  .container
+    include ../shared/searchbar.jade
+    
+    #letter
+      header
+        h1= letter.title
+        h2= letter.author
+      
+      :verbatim
+        !{letter.text}

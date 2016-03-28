@@ -14,8 +14,15 @@ router.get '/*?', (req, res) ->
   query =
     text: 'doc("' + req.params[0] + '")'
 
-  client.query query, (letter) ->
-    $ = cheerio.load letter
-    console.log $('title').text()
+  client.query query, (data) ->
+    $ = cheerio.load data
+    letter =
+      title: $('title').text()
+      author: $('author').find('name').text()
+      text: $('body').html()
+
+    res.render 'letter/letter',
+      title: req.config.title
+      letter: letter
 
 module.exports = router

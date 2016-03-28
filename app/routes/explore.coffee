@@ -38,7 +38,6 @@ router.get '/search', (req, res) ->
       '//tei:title[contains(text(), "' + req.query.q + '")]/../..'
 
   client.query query, (results) ->
-    console.log results
     # TODO: Convert XML to JS object
     res.render 'explore/search',
       title: req.config.title
