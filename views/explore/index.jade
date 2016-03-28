@@ -3,3 +3,30 @@ extends ../shared/layout
 block content
   .container
     include ../shared/searchbar.jade
+    
+    #search-results
+      each result in results
+        .col-md-6
+          a(href='/letter/#{result.author}/#{result.category}/#{result.title}')
+            .search-result
+              .type
+                .icon
+                  span= result.author[0]
+              .info
+                h2= result.title
+                h3= result.author
+                h4= result.category
+              .type
+                .icon
+                  span.glyphicon.glyphicon-menu-right
+    
+    nav#pagination
+      ul
+        unless page === 1
+          li 1
+          
+        - for (var i = page; i < page + 5; i++)
+          li= i
+        
+        unless page === pages
+          li= pages

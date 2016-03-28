@@ -7,6 +7,7 @@ config.basex =
   port: 8984
   username: 'admin'
   password: 'admin'
+  database: 'letterdb'
   path: '/rest/letterdb'
 
 module.exports = config

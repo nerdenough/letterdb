@@ -9,6 +9,7 @@ basex = require 'node-basex'
 config = require '../config'
 index = require './routes/index'
 explore = require './routes/explore'
+letter = require './routes/letter'
 
 # Server setup
 app = express()
@@ -36,6 +37,7 @@ app.use (req, res, next) ->
 # Define routes
 app.use '/', index
 app.use '/explore', explore
+app.use '/letter', letter
 
 # Catch 404 errors
 # Forwarded to the error handlers
