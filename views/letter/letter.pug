@@ -2,12 +2,12 @@ extends ../shared/layout
 
 block content
   .container
-    include ../shared/searchbar.jade
-    
+    include ../shared/searchbar.pug
+
     #letter
       header
         h1= letter.title
         h2= letter.author
-      
+
       :verbatim
         !{letter.text}

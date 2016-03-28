@@ -21,10 +21,10 @@
     "cheerio": "^0.20.0",
     "cookie-parser": "^1.4.1",
     "express": "^4.13.4",
-    "jade": "^1.11.0",
     "morgan": "^1.7.0",
     "node-basex": "0.0.3",
-    "node-xmler": "^0.1.1"
+    "node-xmler": "^0.1.1",
+    "pug": "^2.0.0-alpha1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

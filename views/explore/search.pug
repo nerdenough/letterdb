@@ -2,14 +2,14 @@ extends ../shared/layout
 
 block content
   .container
-    include ../shared/searchbar.jade
-    
+    include ../shared/searchbar.pug
+
     h1 Search Results
     if results
       p Matching the term "#{query}"
     else
       p No data was found matching the query "#{query}".
-    
+
     if results
       #search-results
         .col-md-6
