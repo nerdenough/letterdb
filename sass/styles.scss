@@ -184,6 +184,7 @@ body {
         background: white;
         color: $theme-color;
         font-size: 24px;
+        font-weight: $bold;
         border-radius: 50px;
 
         span {
@@ -223,6 +224,35 @@ body {
 
       .icon {
         color: lighten($theme-color, 10%);
+      }
+    }
+  }
+}
+
+#pagination {
+  text-align: center;
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li, p {
+      display: inline-block;
+      font-size: 14px;
+      color: $theme-color;
+      margin: 10px 5px;
+    }
+
+    li {
+      width: 32px;
+      height: 32px;
+      border: 1px solid $theme-color;
+      border-radius: 3px;
+      line-height: 32px;
+
+      &:hover, &.current-page {
+        color: white;
+        background: $theme-color;
       }
     }
   }

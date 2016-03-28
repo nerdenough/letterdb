@@ -25,8 +25,17 @@ block content
         unless page === 1
           li 1
 
-        - for (var i = page; i < page + 5; i++)
-          li= i
+        unless page <= pages + 3
+          p ...
+
+        - for (var i = page; i < page + 3; i++)
+          if page === i
+            li.current-page= i
+          else
+            li= i
+
+        unless page >= pages - 3
+          p ...
 
         unless page === pages
           li= pages
