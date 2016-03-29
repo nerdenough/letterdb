@@ -6,12 +6,12 @@ SWEN303 individual project. Based on the Colenso Project, I have named my
 implementation "LetterDB" as the site is primarily about storing, accessing
 and contributing to letters.
 
-## Commands
-`npm start`: Starts the server with config specified in `config.coffee`.
-Requires nodemon to be installed.
+## Startup
+The server can be started by running `npm start`. This will start the server
+using `nodemon` with the config specified in `config.coffee`.
 
-`gulp sass`: Translates the Sass stylesheets into CSS stylesheets and places
-them into the public CSS directory.
+*Note that running the servers requires the `nodemon` and `coffee-script`
+npm packages to be installed globally.*
 
 ## Disclaimer
 All images used in this project are licensed under the [Creative Commons
