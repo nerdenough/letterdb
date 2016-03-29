@@ -4,6 +4,9 @@ block content
   .container
     include ../shared/searchbar.pug
 
+    #search-results-details.right
+      span #{total} Results
+
     #search-results
       each result in results
         .col-md-6
