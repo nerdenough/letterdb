@@ -22,24 +22,24 @@ block content
               .type
                 .icon
                   span.glyphicon.glyphicon-menu-right
+    .col-md-12
+      nav#pagination
+        ul
+          unless page <= 2
+            li 1
 
-    nav#pagination
-      ul
-        unless page <= 2
-          li 1
+          unless page <= 3
+            p ...
 
-        unless page <= 3
-          p ...
+          each i in pagination
+            if i >= 1 && i <= pages
+              if page === i
+                li.current-page= i
+              else
+                li= i
 
-        each i in pagination
-          if i >= 1 && i <= pages
-            if page === i
-              li.current-page= i
-            else
-              li= i
+          unless page >= pages - 2
+            p ...
 
-        unless page >= pages - 2
-          p ...
-
-        unless page >= pages - 1
-          li= pages
+          unless page >= pages - 1
+            li= pages

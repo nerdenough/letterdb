@@ -196,6 +196,7 @@ body {
         &.initials {
           background: $theme-color;
           color: white;
+          text-transform: uppercase;
         }
 
         span {
