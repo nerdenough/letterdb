@@ -25,20 +25,21 @@ block content
 
     nav#pagination
       ul
-        unless page === 1
+        unless page <= 2
           li 1
 
-        unless page <= pages + 3
+        unless page <= 3
           p ...
 
-        - for (var i = page; i < page + 3; i++)
-          if page === i
-            li.current-page= i
-          else
-            li= i
+        each i in pagination
+          if i >= 1 && i <= pages
+            if page === i
+              li.current-page= i
+            else
+              li= i
 
-        unless page >= pages - 3
+        unless page >= pages - 2
           p ...
 
-        unless page === pages
+        unless page >= pages - 1
           li= pages

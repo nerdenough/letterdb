@@ -259,6 +259,7 @@ body {
       height: 42px;
       border-radius: 2px;
       line-height: 42px;
+      cursor: pointer;
 
       &:hover {
         color: darken($theme-color, 10%);

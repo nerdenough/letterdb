@@ -1,3 +1,8 @@
+function gotoPage() {
+  var page = $(this).text();
+  window.location = '/explore?page=' + page;
+}
+
 function toggleText() {
   $('#toggle-xml').removeClass('selected');
   $('#toggle-text').addClass('selected');
@@ -31,3 +36,4 @@ resize();
 $(window).on('resize', resize);
 $('#toggle-text').click(toggleText);
 $('#toggle-xml').click(toggleXML);
+$('#pagination li').click(gotoPage);

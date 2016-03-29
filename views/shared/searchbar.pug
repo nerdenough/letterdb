@@ -1,6 +1,6 @@
-form#searchbar(action='/explore/search', method='get')
+form#searchbar(action='/explore', method='get')
   if query
-    input#searchbar-query(type='text', name='q', placeholder='Search for something...', value='#{query}')
+    input#searchbar-query(type='text', name='q', placeholder='Search for something...', value=query)
   else
     input#searchbar-query(type='text', name='q', placeholder='Search for something...')
   button#searchbar-submit(type='submit')
