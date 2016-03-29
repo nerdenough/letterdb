@@ -4,9 +4,16 @@ block content
   .container
     include ../shared/searchbar.pug
 
-    #letter
+    #letter-view.card
+      #toggle-text.selected Text
+      #toggle-xml XML
+
+    #letter.card
       header
         h1= letter.title
         h2= letter.author
 
       div !{letter.text}
+
+    #letter-xml.card
+      textarea= raw

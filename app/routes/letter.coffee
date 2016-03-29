@@ -24,5 +24,6 @@ router.get '/*?', (req, res) ->
     res.render 'letter/letter',
       title: req.config.title
       letter: letter
+      raw: data
 
 module.exports = router

@@ -1,6 +1,18 @@
-$(function () {
-  resize();
-});
+function toggleText() {
+  $('#toggle-xml').removeClass('selected');
+  $('#toggle-text').addClass('selected');
+
+  $('#letter-xml').hide();
+  $('#letter').show();
+}
+
+function toggleXML() {
+  $('#toggle-text').removeClass('selected');
+  $('#toggle-xml').addClass('selected');
+
+  $('#letter').hide();
+  $('#letter-xml').show();
+}
 
 function resize() {
   var window = $(this);
@@ -14,4 +26,8 @@ function resize() {
   }
 }
 
+resize();
+
 $(window).on('resize', resize);
+$('#toggle-text').click(toggleText);
+$('#toggle-xml').click(toggleXML);

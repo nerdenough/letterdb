@@ -1,4 +1,5 @@
 @import 'partials/base';
+@import 'partials/cards';
 @import 'partials/divs';
 @import 'partials/links';
 
@@ -174,8 +175,6 @@ body {
     background: white;
     padding: 40px 0;
     border-radius: 2px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.2s ease-in-out;
 
     .type {
       padding: 0 20px;
@@ -227,8 +226,6 @@ body {
     }
 
     &:hover {
-      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-
       .icon {
         color: lighten($theme-color, 10%);
       }
@@ -266,6 +263,70 @@ body {
         background: $theme-color;
       }
     }
+  }
+}
+
+#letter-view {
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 10px;
+
+  .selected {
+    background: $theme-color;
+    color: white;
+  }
+
+  div {
+    display: inline-block;
+    background: white;
+    color: $theme-color;
+    font-weight: bold;
+    padding: 5px 20px;
+  }
+
+  div:hover {
+    text-decoration: none;
+    opacity: 0.8;
+  }
+}
+
+#letter {
+  padding: 20px;
+  border-radius: 2px;
+  margin: 20px 0;
+  overflow: hidden;
+
+  h1, h2 {
+    margin-top: 0;
+  }
+
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-style: italic;
+  }
+
+  p {
+    font-size: 18px;
+  }
+}
+
+#letter-xml {
+  display: none;
+  margin: 20px 0;
+  padding: 20px;
+
+  textarea {
+    width: 100%;
+    height: 600px;
+    font-size: 16px;
+    border: none;
   }
 }
 
