@@ -6,7 +6,7 @@ cookieParser = require 'cookie-parser'
 logger = require 'morgan'
 basex = require 'node-basex'
 
-config = require '../config'
+config = require './config'
 index = require './routes/index'
 explore = require './routes/explore'
 letter = require './routes/letter'
@@ -19,14 +19,14 @@ server = http.createServer(app)
 client = new basex.Client(config.basex)
 
 # View engine setup
-app.set 'views', path.join(__dirname, '../views')
+app.set 'views', path.join(__dirname, 'views')
 app.set 'view engine', 'pug'
 
 app.use logger 'dev'
 app.use bodyParser.json()
 app.use bodyParser.urlencoded extended: false
 app.use cookieParser()
-app.use express.static path.join(__dirname, '../public')
+app.use express.static path.join(__dirname, 'public')
 
 # Global route
 app.use (req, res, next) ->

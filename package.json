@@ -14,7 +14,7 @@
     "url": "git+https://github.com/nerdenough/swen303-letterdb.git"
   },
   "scripts": {
-    "start": "nodemon main.js"
+    "start": "nodemon server.coffee"
   },
   "dependencies": {
     "body-parser": "^1.15.0",
