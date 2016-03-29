@@ -293,10 +293,11 @@ body {
 }
 
 #letter {
+  height: 600px;
   padding: 20px;
   border-radius: 2px;
   margin: 20px 0;
-  overflow: hidden;
+  overflow-y: auto;
 
   h1, h2 {
     margin-top: 0;
@@ -318,13 +319,14 @@ body {
 }
 
 #letter-xml {
+  height: 600px;
   display: none;
   margin: 20px 0;
   padding: 20px;
 
   textarea {
     width: 100%;
-    height: 600px;
+    height: 100%;
     font-size: 16px;
     border: none;
   }
