@@ -1,7 +1,7 @@
 form#searchbar(action='/explore', method='get')
   if query
-    input#searchbar-query(type='text', name='q', placeholder='Search for something...', value=query)
+    input#searchbar-query(type='text', name='q', placeholder='Search for something...', value=query, autocomplete='off')
   else
-    input#searchbar-query(type='text', name='q', placeholder='Search for something...')
+    input#searchbar-query(type='text', name='q', placeholder='Search for something...', autocomplete='off')
   button#searchbar-submit(type='submit')
     span.glyphicon.glyphicon-search
