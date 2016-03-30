@@ -34,6 +34,3 @@ node_modules
 
 # Compiled Sass
 /public/css
-
-# Data
-/data
