@@ -26,11 +26,6 @@ router.get '/*?', (req, res) ->
       letter: letter
       raw: data
 
-# GET: /letter/upload
-router.get '/upload', (req, res) ->
-  res.render 'letter/upload',
-    title: req.config.title
-
 # POST: /letter/download
 router.post '/download', (req, res) ->
   title = req.body.title

@@ -1,0 +1,25 @@
+extends ../shared/layout
+
+block content
+  .container
+    include ../shared/searchbar.pug
+
+    #upload.col-md-12
+      h1 Upload
+      if success
+        p.
+          Your upload has been completed successfully!
+      else
+        p.
+          Here you can contribute to LetterDB! Uploading allows you to store a
+          valid TEI namespace XML file inside our BaseX database.
+
+        form(action='/upload', method='post')
+          div
+            label Author:&nbsp;
+            input(type='text', name='author', placeholder='John Smith')
+          div
+            label Category:&nbsp;
+            input(type='text', name='category', placeholder='private_letters')
+          textarea(name='xml')
+          button(type='submit') Upload

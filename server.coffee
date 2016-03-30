@@ -10,6 +10,7 @@ config = require './config'
 index = require './routes/index'
 explore = require './routes/explore'
 letter = require './routes/letter'
+upload = require './routes/upload'
 
 # Server setup
 app = express()
@@ -38,6 +39,7 @@ app.use (req, res, next) ->
 app.use '/', index
 app.use '/explore', explore
 app.use '/letter', letter
+app.use '/upload', upload
 
 # Catch 404 errors
 # Forwarded to the error handlers
