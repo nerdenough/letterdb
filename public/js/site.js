@@ -1,3 +1,13 @@
+function download() {
+  $('form').attr('action', '/letter/download');
+  $('form').submit();
+}
+
+function save() {
+  $('form').attr('action', '/letter/save');
+  $('form').submit();
+}
+
 function gotoPage() {
   var page = $(this).text();
   window.location = '/explore?page=' + page;
@@ -37,3 +47,5 @@ $(window).on('resize', resize);
 $('#toggle-pretty').click(togglePretty);
 $('#toggle-raw').click(toggleRaw);
 $('#pagination li').click(gotoPage);
+$('#btn-download').click(download);
+$('#btn-save').click(save);

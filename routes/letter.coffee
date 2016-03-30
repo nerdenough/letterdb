@@ -26,4 +26,19 @@ router.get '/*?', (req, res) ->
       letter: letter
       raw: data
 
+# GET: /letter/upload
+router.get '/upload', (req, res) ->
+  res.render 'letter/upload',
+    title: req.config.title
+
+# POST: /letter/download
+router.post '/download', (req, res) ->
+  title = req.body.title
+  console.log title
+
+  res.setHeader 'Content-disposition', 'attachment; filename=download.xml'
+  res.setHeader 'Content-type', 'application/xml'
+
+  res.send req.body.xml
+
 module.exports = router

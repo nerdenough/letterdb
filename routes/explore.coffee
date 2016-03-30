@@ -11,6 +11,8 @@ router.get '/', (req, res) ->
   client = req.baseXClient
   q = req.query.q || ''
 
+  parseSearch q
+
   if q.indexOf('XQ ') is 0
     xquerySearch client, q.substr(3), (results) ->
       results = results || ''
@@ -48,6 +50,14 @@ router.get '/', (req, res) ->
         page: page
         pagination: [page - 1, page, page + 1]
         query: q
+
+parseSearch = (str) ->
+  if str.indexOf('XQ ') is 0
+    return str
+
+  else
+    str = str.split(/\b(?:AND|OR|NOT)\b/)
+    console.log str
 
 # Sends a query to BaseX requesting any files where the title element contains
 # the specified string.

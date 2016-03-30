@@ -11,11 +11,14 @@ block content
     #pretty.card
       #letter
         header
-          h1= letter.title
+          h1#title= letter.title
           h2= letter.author
 
         div !{letter.text}
 
     #raw.card
       #letter-xml
-        textarea= raw
+        form(action='', method='post')
+          textarea(name='xml')= raw
+          button#btn-save Save
+          button#btn-download Download
