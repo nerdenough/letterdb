@@ -11,53 +11,54 @@ router.get '/', (req, res) ->
   client = req.baseXClient
   q = req.query.q || ''
 
-  parseSearch q
-
   if q.indexOf('XQ ') is 0
     xquerySearch client, q.substr(3), (results) ->
-      results = results || ''
-      raw = results
-      results = results.split '\n'
+      render req, res, results
 
-      data = processResults(results)
-      page = parseInt(req.query.page) || 1
-
-      res.render 'explore/index',
-        title: req.config.title
-        results: data.slice(page * 8 - 8, page * 8)
-        raw: raw
-        total: data.length
-        pages: Math.ceil(data.length / 8)
-        page: page
-        pagination: [page - 1, page, page + 1]
-        query: q
+  else if q.indexOf('LOGIC ') is 0
+    logicSearch client, q.substr(6), (results) ->
+      render req, res, results
 
   else
     basicSearch client, q, (results) ->
-      results = results || ''
-      raw = results
-      results = results.split '\n'
+      render req, res, results
 
-      data = processResults(results)
-      page = parseInt(req.query.page) || 1
+# Renders the explore page.
+render = (req, res, results) ->
+  results = results || ''
+  raw = results
+  results = results.split '\n'
+  results = removeDuplicates(results)
 
-      res.render 'explore/index',
-        title: req.config.title
-        results: data.slice(page * 8 - 8, page * 8)
-        raw: raw
-        total: data.length
-        pages: Math.ceil(data.length / 8)
-        page: page
-        pagination: [page - 1, page, page + 1]
-        query: q
+  data = processResults(results)
+  page = parseInt(req.query.page) || 1
 
-parseSearch = (str) ->
-  if str.indexOf('XQ ') is 0
-    return str
+  res.render 'explore/index',
+    title: req.config.title
+    results: data.slice(page * 8 - 8, page * 8)
+    raw: raw
+    total: data.length
+    pages: Math.ceil(data.length / 8)
+    page: page
+    pagination: [page - 1, page, page + 1]
+    query: req.query.q
 
-  else
-    str = str.split(/\b(?:AND|OR|NOT)\b/)
-    console.log str
+# Removes duplicates from an array and returns a distinct array.
+removeDuplicates = (results) ->
+  distinct = []
+  match = false
+
+  for result in results
+    match = false
+
+    for i in [0 .. distinct.length]
+      if distinct[i] is result
+        match = true
+
+    if !match
+      distinct.push result
+
+  return distinct
 
 # Sends a query to BaseX requesting any files where the title element contains
 # the specified string.
@@ -71,8 +72,20 @@ basicSearch = (client, str, callback) ->
 
   client.query query, callback
 
+# Sends a logic query to BaseX requesting any files matching the specified
+# criteria.
+logicSearch = (client, str, callback) ->
+  query =
+    text:
+      'declare default element namespace "http://www.tei-c.org/ns/1.0"; ' +
+      'for $i in //.[. contains text ' + str + '] ' +
+      'return db:path($i)'
+
+  client.query query, callback
+
+# Sends an xquery strng to BaseX, sending any response from the database to the
+# specified callback.
 xquerySearch = (client, str, callback) ->
-  console.log str
   query =
     text:
       'declare default element namespace "http://www.tei-c.org/ns/1.0"; ' + str
@@ -95,7 +108,6 @@ processResults = (results) ->
         category: result[1]
         title: result[2].substr(0, result[2].length - 4)
   return data
-
 
 # Export the router
 module.exports = router
