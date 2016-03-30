@@ -3,11 +3,6 @@ function download() {
   $('form').submit();
 }
 
-function save() {
-  $('form').attr('action', '/letter/save');
-  $('form').submit();
-}
-
 function gotoPage() {
   var page = $(this).text();
   window.location = '/explore?page=' + page;
