@@ -4,24 +4,34 @@ block content
   .container
     include ../shared/searchbar.pug
 
-    #search-results-details.right
-      span #{total} Results
+    .col-md-12
+      #search-results-details.right
+        span #{total} Results
+
+      #letter-view.card
+        #toggle-pretty.selected Pretty
+        #toggle-raw Raw
 
     #search-results
-      each result in results
+      #pretty
+        each result in results
+          .col-md-6
+            a(href='/letter/' + result.author + '/' + result.category + '/' + result.title)
+              .search-result.card
+                .type
+                  .icon.initials
+                    span= result.author[0]
+                .info
+                  h2= result.title
+                  h3= result.author
+                  h4= result.category
+                .type
+                  .icon
+                    span.glyphicon.glyphicon-menu-right
+      #raw
         .col-md-6
-          a(href='/letter/' + result.author + '/' + result.category + '/' + result.title)
-            .search-result.card
-              .type
-                .icon.initials
-                  span= result.author[0]
-              .info
-                h2= result.title
-                h3= result.author
-                h4= result.category
-              .type
-                .icon
-                  span.glyphicon.glyphicon-menu-right
+          #xquery.card= raw
+
     .col-md-12
       nav#pagination
         ul

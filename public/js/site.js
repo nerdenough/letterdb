@@ -3,20 +3,20 @@ function gotoPage() {
   window.location = '/explore?page=' + page;
 }
 
-function toggleText() {
-  $('#toggle-xml').removeClass('selected');
-  $('#toggle-text').addClass('selected');
+function togglePretty() {
+  $('#toggle-raw').removeClass('selected');
+  $('#toggle-pretty').addClass('selected');
 
-  $('#letter-xml').hide();
-  $('#letter').show();
+  $('#raw').hide();
+  $('#pretty').show();
 }
 
-function toggleXML() {
-  $('#toggle-text').removeClass('selected');
-  $('#toggle-xml').addClass('selected');
+function toggleRaw() {
+  $('#toggle-pretty').removeClass('selected');
+  $('#toggle-raw').addClass('selected');
 
-  $('#letter').hide();
-  $('#letter-xml').show();
+  $('#pretty').hide();
+  $('#raw').show();
 }
 
 function resize() {
@@ -34,6 +34,6 @@ function resize() {
 resize();
 
 $(window).on('resize', resize);
-$('#toggle-text').click(toggleText);
-$('#toggle-xml').click(toggleXML);
+$('#toggle-pretty').click(togglePretty);
+$('#toggle-raw').click(toggleRaw);
 $('#pagination li').click(gotoPage);

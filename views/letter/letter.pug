@@ -5,15 +5,17 @@ block content
     include ../shared/searchbar.pug
 
     #letter-view.card
-      #toggle-text.selected Text
-      #toggle-xml XML
+      #toggle-pretty.selected Pretty
+      #toggle-raw Raw
 
-    #letter.card
-      header
-        h1= letter.title
-        h2= letter.author
+    #pretty.card
+      #letter
+        header
+          h1= letter.title
+          h2= letter.author
 
-      div !{letter.text}
+        div !{letter.text}
 
-    #letter-xml.card
-      textarea= raw
+    #raw.card
+      #letter-xml
+        textarea= raw

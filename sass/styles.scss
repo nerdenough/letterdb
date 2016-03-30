@@ -159,8 +159,10 @@ body {
 }
 
 #search-results-details {
+  float: right;
   color: $theme-color;
   margin-right: 10px;
+  margin-top: 15px;
   opacity: 0.5;
 }
 
@@ -328,7 +330,6 @@ body {
 
 #letter-xml {
   height: 600px;
-  display: none;
   margin: 20px 0;
   padding: 20px;
 
@@ -338,6 +339,17 @@ body {
     font-size: 16px;
     border: none;
   }
+}
+
+#raw {
+  display: none;
+}
+
+#xquery {
+  height: 600px;
+  padding: 20px;
+  font-size: 14px;
+  overflow-y: auto;
 }
 
 .footer {

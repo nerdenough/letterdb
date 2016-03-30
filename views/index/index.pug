@@ -7,15 +7,15 @@ block content
         #home-jumbo-logo
           img(src='/images/letterdb-logo-white-shadow.png')
         p#home-jumbo-tagline A database of letters
-        form(action='/explore/search', method='get')
+        form(action='/explore', method='get')
           input#search(type='text', name='q', placeholder='Search')
           button#submit(type='submit')
             span.glyphicon.glyphicon-search
-  
+
   .container
     #home-logo.row.center
       img(src='/images/logo.png', alt='#{title}')
-  
+
     .row#home-thumbs
       .col-md-4.center
         img(src='/images/search.png', alt='Search')
